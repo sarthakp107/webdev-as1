@@ -36,10 +36,10 @@
         <fieldset>
                 <legend>Contract:</legend>
                 <input type="radio" id="ongoing" name="contract" value="On-going" required>
-                <label for="ongoing">On-going</label>
+                <label for="ongoing">On going</label>
                 <br>
-                <input type="radio" id="fixedTerm" name="contract" value="Fixed term" required>
-                <label for="fixedTerm">Fixed term</label>
+                <input type="radio" id="Fixed Term" name="contract" value="Fixed Term" required>
+                <label for="Fixed Term">Fixed Term</label>
             </fieldset>
             <br>
             

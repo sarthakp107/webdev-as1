@@ -1,17 +1,24 @@
 <?php
 
+//pattern validation for title
 $patternForTitle = '/^[A-Za-z0-9 ,.!]{1,50}$/';
 
+//user inputs
 // Check if the 'jobTitle' field is set before accessing it
 $userInputJobTitle = isset($_GET['jobTitle']) ? $_GET['jobTitle'] : '';
+$searchByPosition = isset($_GET['position']) ? $_GET['position'] : 'Any';
+$searchByContract = isset($_GET['contract']) ? $_GET['contract'] : 'Any';
+$searchByLocation = isset($_GET['location']) ? $_GET['location'] : 'Any';
+$searchByApplicationType = isset($_GET['applicationType']) ? $_GET['applicationType'] : 'Any';
 
-$searchByPosition = isset($_GET['position']) ? $_GET['position'] : 'not set position';
-echo "<p>Received position: '{$searchByPosition}'</p>";
+
+echo "<p>Received position: '{$searchByContract}'</p>";
+
 
 if (isset($_GET['search'])) {
 
     // Validate job title
-    if (empty($userInputJobTitle) || !preg_match($patternForTitle, $userInputJobTitle)) {
+    if (!empty($userInputJobTitle) && !preg_match($patternForTitle, $userInputJobTitle)) {
         die("Invalid Title! It should be up to 10 alphanumeric characters, spaces, commas, periods, or exclamation points.");
     }
 
@@ -25,15 +32,57 @@ if (isset($_GET['search'])) {
             
             if ($dataSingleLine != "") {
                 $dataArray = explode(",", $dataSingleLine);
+
                 $jobTitle = trim($dataArray[1]);
+                $position = trim($dataArray[4]);
+                $contract = trim($dataArray[5]);
+                $location = trim($dataArray[6]);
+                $applicationMethods = trim($dataArray[7]);
 
-                echo "<p>Checking job title: '{$jobTitle}' against search: '{$userInputJobTitle}'</p>";
+                //set the match to be true by default
+                $isMatch = true;
 
-                
+                //checks
                 // Search for the job title within the file's job titles
-                if (stripos($userInputJobTitle , $jobTitle) !== false) {
+                if (!empty($userInputJobTitle) && stripos($userInputJobTitle , $jobTitle) === false) {
+                    $isMatch = false;
+                } 
+                
+                // position
+               
+                if ($searchByPosition != "Any" && strcasecmp($position, $searchByPosition) != 0) {
+                    $isMatch = false;
+                }
+
+                // contract
+               
+                if($searchByContract != "Any" && strcasecmp($contract, $searchByContract) != 0){
+                    $isMatch = false;
+                    echo "contract in file: " . $contract . "<br>";
+                    echo "contract searched: " . $searchByContract . "<br>";
+                    
+                }
+
+
+                // location
+                if($searchByLocation != "Any" && $location != $searchByLocation){
+                    $isMatch = false;
+                    echo "contract in file: " . $location . "<br>";
+                    echo "contract searched: " . $searchByLocation . "<br>";
+                }
+
+                // application method
+                if($searchByApplicationType != "Any" && stripos($searchByApplicationType , $applicationMethods) === false){
+                    $isMatch = false;
+                    echo "contract in file: " . $applicationMethods . "<br>";
+                    echo "contract searched: " . $searchByApplicationType . "<br>";
+                }
+
+                //if all criteria matches add job to the result
+                if($isMatch){
                     $matches[] = $dataArray;
                 }
+                
                 
             }
         }
