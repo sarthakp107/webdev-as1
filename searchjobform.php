@@ -18,7 +18,7 @@
 
         <label for="position">Position: </label>
         <select id="position" name="position">
-            <option value="anyPosition">Any</option>
+            <option value="">Any</option>
             <option value="Full-Time">Full-Time</option>
             <option value="Part-Time">Part-Time</option>
         </select><br><br>
@@ -26,7 +26,7 @@
          <!-- Contract -->
          <label for="contract">Contract Type: </label>
         <select id="contract" name="contract">
-            <option value="anyContract">Any</option>
+            <option value="">Any</option>
             <option value="ongoing">On-going</option>
             <option value="fixedTerm">Fixed term</option>
         </select><br><br>
@@ -34,7 +34,7 @@
          <!-- Application Type -->
          <label for="applicationType">Application Type: </label>
         <select id="applicationType" name="applicationType">
-            <option value="anyApplication">Any</option>
+            <option value="">Any</option>
             <option value="Post">Post</option>
             <option value="Mail">Mail</option>
         </select><br><br>
@@ -42,7 +42,7 @@
         <!-- Location -->
         <label for="location">Location: </label>
         <select id="location" name="location">
-            <option value="anyLocation">Any</option>
+            <option value="">Any</option>
             <option value="remote">Remote</option>
             <option value="onsite">onsite</option>
         </select><br><br>

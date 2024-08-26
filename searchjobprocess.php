@@ -4,7 +4,9 @@ $patternForTitle = '/^[A-Za-z0-9 ,.!]{1,50}$/';
 
 // Check if the 'jobTitle' field is set before accessing it
 $userInputJobTitle = isset($_GET['jobTitle']) ? $_GET['jobTitle'] : '';
-echo "<p>Received job title: '{$userInputJobTitle}'</p>";
+
+$searchByPosition = isset($_GET['position']) ? $_GET['position'] : 'not set position';
+echo "<p>Received position: '{$searchByPosition}'</p>";
 
 if (isset($_GET['search'])) {
 
@@ -49,6 +51,9 @@ if (isset($_GET['search'])) {
                     <th>Title</th>
                     <th>Description</th>
                     <th>Close Date</th>
+                    <th>Position</th>
+                    <th>Contract</th>
+                    <th>Location</th>
                     <th>Application Methods</th>
                 </tr>";
 
@@ -59,6 +64,9 @@ if (isset($_GET['search'])) {
                     <td>{$match[2]}</td>
                     <td>{$match[3]}</td>
                     <td>{$match[4]}</td>
+                    <td>{$match[5]}</td>
+                    <td>{$match[6]}</td>
+                    <td>{$match[7]}</td>
                   </tr>";
         }
         echo "</table>";

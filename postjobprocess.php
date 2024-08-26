@@ -4,6 +4,9 @@ $positionid = $_POST['positionid'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 $closeDate = $_POST['closedate'];
+$position = $_POST['position'];
+$contract = $_POST['contract'];
+$location = $_POST['location'];
 $acceptApp = $_POST['acceptApplication']; //html name tag array 
 
 //specific patterns for each input boxes
@@ -87,12 +90,12 @@ if (isset($_POST['submit'])) {
         // Join the checkbox values into a single string
         $acceptAppString = implode(' | ', $acceptApp);
 
-        $data  = $positionid . "," . $title . "," . $description . "," . $closeDate . "," . $acceptAppString . "\n"; 
+        $data  = $positionid . "," . $title . "," . $description . "," . $closeDate . "," . $position. "," . $contract . "," . $location . "," . $acceptAppString . "\n"; 
         fwrite($handle,$data);
     
         fclose($handle);
     
-        $alldata[] = array($positionid,$title,$description,$closeDate,$acceptAppString);
+        $alldata[] = array($positionid,$title,$description,$closeDate,$position , $contract , $location , $acceptAppString);
         echo "Form submitted";
     }
     else{
@@ -107,6 +110,9 @@ echo "<table border='1'>
             <th>Title</th>
             <th>Description</th>
             <th>Close Date</th>
+            <th>Position</th>
+            <th>Contract</th>
+            <th>Location</th>
             <th>Application Methods</th>
         </tr>";
 
@@ -117,6 +123,9 @@ foreach ($alldata as $data) {
             <td>{$data[2]}</td>
             <td>{$data[3]}</td>
             <td>{$data[4]}</td>
+            <td>{$data[5]}</td>
+            <td>{$data[6]}</td>
+            <td>{$data[7]}</td>
           </tr>";
 }
 
