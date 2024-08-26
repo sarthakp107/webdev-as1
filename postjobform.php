@@ -56,10 +56,10 @@
 
             <fieldset>
                 <legend>Accept Applications By:</legend>
-                <input type="checkbox" id="post" name="acceptApplication" value="Post" required>
+                <input type="checkbox" id="post" name="acceptApplication[]" value="Post">
                 <label for="post">Post</label>
                 <br>
-                <input type="checkbox" id="email" name="acceptApplication" value="Email" required>
+                <input type="checkbox" id="email" name="acceptApplication[]" value="Email">
                 <label for="email">Email</label>
             </fieldset> 
 
