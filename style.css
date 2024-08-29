@@ -481,6 +481,36 @@ form button:hover {
 
 
 
+.about-container{
+    background-color: #d22e2e; /* White background for the form container */
+    padding: 30px; /* Padding inside the form container */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Max width for the container */
+    margin: 20px auto; /* Center container horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    position: relative;
+}
+.about-container:hover {
+    box-shadow: 100px 102px 100px rgba(26, 97, 172, 0.3); /* Slightly deeper shadow on hover */
+    transform: scale(1.01);
+
+}
+
+/* Pseudo-elements for hover effect on empty space */
+.about-container::before,
+.about-container::after {
+    content: ""; /* Empty content */
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    bottom: 0;
+    width: 10vw; /* Full viewport width */
+    z-index: -1; /* Behind the container */
+    transition: background-color 5s ease; /* Smooth color transition */
+}
+
 
 
 
