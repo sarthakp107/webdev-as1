@@ -49,7 +49,9 @@
     </ul>
 
     <br><a href='index.php'>Home page</a> | <a href='searchjobform.php'>Search Job Vacancy page</a>
-
+    <footer class="footer">
+    <p>&copy; 2024 Sarthak Pradhan . All Rights Reserved .</p>
+</footer>
 </div>
 </body>
 </html>

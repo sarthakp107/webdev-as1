@@ -21,7 +21,12 @@
         <p><a href="postjobform.php">Post Job Vacancy</a></p>
         <p><a href="searchjobform.php">Search Job Vacancy</a></p>
         <p><a href="about.php">About This Page</a></p>
+        <footer class="footer">
+    <p>&copy; 2024 Sarthak Pradhan . All Rights Reserved .</p>
+</footer>
     </div>
 </body>
+
+
 
 </html>
