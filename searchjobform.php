@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Job Vacancy Posting System</h2><br>
+    <h2>Job Vacancy search System</h2><br>
 
     <form action="searchjobprocess.php" method="GET">
 

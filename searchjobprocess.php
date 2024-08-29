@@ -44,7 +44,7 @@ if (isset($_GET['search'])) {
 
                 //checks
                 // Search for the job title within the file's job titles
-                if (!empty($userInputJobTitle) && stripos($userInputJobTitle , $jobTitle) === false) {
+                if (!empty($userInputJobTitle) && stripos($jobTitle, $userInputJobTitle ) === false) { //stripos(sentence , word)  (array , word)
                     $isMatch = false;
                 } 
                 
@@ -77,6 +77,8 @@ if (isset($_GET['search'])) {
                     echo "contract in file: " . $applicationMethods . "<br>";
                     echo "contract searched: " . $searchByApplicationType . "<br>";
                 }
+
+                
 
                 //if all criteria matches add job to the result
                 if($isMatch){

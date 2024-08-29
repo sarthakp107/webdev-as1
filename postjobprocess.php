@@ -1,13 +1,13 @@
 <?php
 //user input from form
-$positionid = $_POST['positionid'];
-$title = $_POST['title'];
-$description = $_POST['description'];
-$closeDate = $_POST['closedate'];
-$position = $_POST['position'];
-$contract = $_POST['contract'];
-$location = $_POST['location'];
-$acceptApp = $_POST['acceptApplication']; //html name tag array 
+$positionid = isset($_POST['positionid']) ? $_POST['positionid'] : '';
+$title = isset($_POST['title']) ? $_POST['title'] : '';
+$description = isset($_POST['description']) ? $_POST['description'] : '';
+$closeDate = isset($_POST['closedate']) ? $_POST['closedate'] : '';
+$position = isset($_POST['position']) ? $_POST['position'] : '';
+$contract = isset($_POST['contract']) ? $_POST['contract'] : '';
+$location = isset($_POST['location']) ? $_POST['location'] : '';
+$acceptApp = isset($_POST['acceptApplication']) ? $_POST['acceptApplication'] : array(); // Accept application is an array
 
 //specific patterns for each input boxes
 $patternForPositionId = '/^ID\d{3}$/';
@@ -16,11 +16,6 @@ $patternForCloseDate = '/^\d{2}\/\d{2}\/\d{2}$/';
 
 //get the length of the description
 $lengthOfDescription = strlen($description);
-
-//function for checking the uniqueness of the position id
-
-
-
 
 
 if (isset($_POST['submit'])) {
@@ -45,6 +40,15 @@ if (isset($_POST['submit'])) {
         die("Invalid close date. It should be in dd/mm/yy format.");
     }
 
+    if (empty($position)) {
+        die("At least one position is required.");
+    }
+    if (empty($contract)) {
+        die("At least one contract is required.");
+    }
+    if (empty($location)) {
+        die("At least one location is required.");
+    }
     //accept application validation atleast one checkbox ticked
     if (empty($acceptApp)) {
         die("At least one method to accept applications is required.");

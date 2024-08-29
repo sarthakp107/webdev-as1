@@ -8,10 +8,10 @@
 <body>
     <form action="postjobprocess.php" method="post">
         <label for="positionid">Position ID: </label>
-        <input type="text" id="positionid" name="positionid" maxlength="5" required placeholder="ID001" ><br><br>
+        <input type="text" id="positionid" name="positionid" placeholder="ID001" ><br><br>
         
        <label>Title: </label>
-        <input type="text" id="title" name="title" maxlength="10" >
+        <input type="text" id="title" name="title" >
         <br><br>
        
         <label>Description: </label>
@@ -26,29 +26,29 @@
 
         <fieldset>
             <legend>Position :</legend>
-            <input type="radio" id="fullTime" name="position" value="Full Time" required>
+            <input type="radio" id="fullTime" name="position" value="Full Time" >
             <label for="fullTime">Full Time</label><br>
-            <input type="radio" id="partTime" name="position" value="Part Time" required>
+            <input type="radio" id="partTime" name="position" value="Part Time" >
             <label for="partTime">Part Time</label>
         </fieldset>
         <br>
         
         <fieldset>
                 <legend>Contract:</legend>
-                <input type="radio" id="ongoing" name="contract" value="On-going" required>
+                <input type="radio" id="ongoing" name="contract" value="On-going" >
                 <label for="ongoing">On going</label>
                 <br>
-                <input type="radio" id="Fixed Term" name="contract" value="Fixed Term" required>
+                <input type="radio" id="Fixed Term" name="contract" value="Fixed Term" >
                 <label for="Fixed Term">Fixed Term</label>
             </fieldset>
             <br>
             
             <fieldset>
                 <legend>Location:</legend>
-                <input type="radio" id="onSite" name="location" value="On site" required>
+                <input type="radio" id="onSite" name="location" value="On site" >
                 <label for="onSite">On site</label>
                 <br>
-                <input type="radio" id="remote" name="location" value="Remote" required>
+                <input type="radio" id="remote" name="location" value="Remote" >
                 <label for="remote">Remote</label>
             </fieldset>
             <br>
