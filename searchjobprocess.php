@@ -12,6 +12,9 @@ $searchByLocation = isset($_GET['location']) ? $_GET['location'] : 'Any';
 $searchByApplicationType = isset($_GET['applicationType']) ? $_GET['applicationType'] : 'Any';
 
 
+//closing date and actual date
+$todayDate = new DateTime();
+
 echo "<p>Received position: '{$searchByContract}'</p>";
 
 
@@ -34,11 +37,14 @@ if (isset($_GET['search'])) {
                 $dataArray = explode(",", $dataSingleLine);
 
                 $jobTitle = trim($dataArray[1]);
+                $closingDateStr = trim($dataArray[3]);
                 $position = trim($dataArray[4]);
                 $contract = trim($dataArray[5]);
                 $location = trim($dataArray[6]);
                 $applicationMethods = trim($dataArray[7]);
 
+                 // Convert closing date to DateTime object for comparison
+                $closingDate = DateTime::createFromFormat('d/m/y' , $closingDateStr);
                 //set the match to be true by default
                 $isMatch = true;
 
@@ -78,7 +84,9 @@ if (isset($_GET['search'])) {
                     echo "contract searched: " . $searchByApplicationType . "<br>";
                 }
 
-                
+                if ($closingDate && $closingDate < $todayDate) {
+                    $isMatch = false;
+                }
 
                 //if all criteria matches add job to the result
                 if($isMatch){
