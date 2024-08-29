@@ -382,6 +382,110 @@ form button:hover {
 
 
 
+
+
+
+
+/* searchjobform.php */
+
+
+.searchform-container {
+    background-color: #ffffff; /* White background for the form container */
+    padding: 30px; /* Padding inside the form container */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Max width for the container */
+    margin: 20px auto; /* Center container horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    position: relative;
+}
+.searchform-container:hover {
+    box-shadow: 100px 102px 100px rgba(26, 97, 172, 0.3); /* Slightly deeper shadow on hover */
+    transform: scale(1.01);
+
+}
+
+/* Pseudo-elements for hover effect on empty space */
+.searchform-container::before,
+.searchform-container::after {
+    content: ""; /* Empty content */
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    bottom: 0;
+    width: 10vw; /* Full viewport width */
+    z-index: -1; /* Behind the container */
+    transition: background-color 5s ease; /* Smooth color transition */
+}
+
+.searchform-container form {
+    display: grid; /* Grid layout for the form */
+    gap: 15px; /* Space between form elements */
+}
+.searchform-container h2 {
+    font-size: 24px; /* Font size for the heading */
+    text-transform: uppercase;
+    color: #333333; /* Dark gray color for the heading */
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.searchform-container form label {
+    font-size: 18px; /* Font size for labels */
+    color: #333333; /* Dark gray color for labels */
+    display: block; /* Make labels block-level for consistent spacing */
+}
+
+.searchform-container form input[type="text"],
+.searchform-container form select {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Submit button styles within this form */
+.searchform-container form input[type="submit"] {
+    background-color: #007bff; /* Blue background for the button */
+    color: #ffffff; /* White text color */
+    margin: 0; 
+    padding: 1px 20px; /* Padding around the button text */
+    border-radius: 40px; /* Rounded corners */
+    font-size: 18px; /* Font size for the button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    width: 50%; /* Full width button */
+    grid-column: span 10;
+
+}
+
+.searchform-container form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Link styles within this form */
+.searchform-container a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.searchform-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+.searchform-container {
+    padding: 20px; /* Adjust container padding */
+}
+/* searchjobform.php */
+
+
+
+
+
+
+
+
 /* Responsive styling */
 @media (max-width: 480px) {
     .myinfo {

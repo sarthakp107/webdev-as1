@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h2>Job Vacancy search System</h2><br>
+    <div class="center-container">
+
+        <!-- Navigation Bar -->
+        <div class="navbar">
+
+            <div class="menu">
+                <a href="index.php">Home</a>
+                <a href="searchjobform.php">Search Job</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="searchform-container">
+        <h2>Job Vacancy search System</h2><br>
+    
 
     <form action="searchjobprocess.php" method="GET">
 
         <!--job title  -->
         <label for="jobTitle">Job Title: </label>
-        <input type="text" id="jobTitle" name="jobTitle" ><br><br>
+        <input type="text" id="jobTitle" name="jobTitle"><br><br>
 
         <!--position  -->
 
@@ -23,16 +40,16 @@
             <option value="Part Time">Part-Time</option>
         </select><br><br>
 
-         <!-- Contract -->
-         <label for="contract">Contract Type: </label>
+        <!-- Contract -->
+        <label for="contract">Contract Type: </label>
         <select id="contract" name="contract">
             <option value="Any">Any</option>
             <option value="On-going">On-going</option>
             <option value="Fixed Term">Fixed Term</option>
         </select><br><br>
 
-         <!-- Application Type -->
-         <label for="applicationType">Application Type: </label>
+        <!-- Application Type -->
+        <label for="applicationType">Application Type: </label>
         <select id="applicationType" name="applicationType">
             <option value="Any">Any</option>
             <option value="Post">Post</option>
@@ -55,6 +72,8 @@
     <br>
 
     <a href="index.php">Return to the home page</a>
-    
+    </div>
+    </div>
 </body>
+
 </html>
