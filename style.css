@@ -1,4 +1,50 @@
-/* Reset some default browser styles */
+body {
+    margin-top: 0px; /*  navbar height */
+    background-color: #f4f4f4; /* Light, neutral background for better contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    justify-content: center; /* Center items horizontally */
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #007bff; /* Navbar background color */
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000;
+}
+
+.navbar .menu {
+    display: flex; /* Flexbox for menu items */
+    gap: 15px; /* Spacing between menu items */
+    margin-left: 20px; /* Space between logo and menu */
+}
+
+.navbar a {
+    color: #ffffff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 16px; /* Padding around links */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.navbar a:hover {
+    background-color: #0056b3; /* Hover background color */
+}
+
+
+
+
+
+
+
+
+/* Index.php */
 body, h1, h2, p, a {
     margin: 0;
     padding: 0;
@@ -81,6 +127,260 @@ body {
     border-color: #0056b3; /* Darker border color on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
 }
+
+/* postjobform.php */
+
+
+/* Form container */
+.form-container {
+    background-color: #ffffff; /* White background for a clean look */
+    padding: 40px;
+    border-radius: 12px; /* Rounded corners for a polished appearance */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    max-width: 90%; /* Max width for better spacing */
+    text-align: center; /* Center-align text */
+    border: 1px solid #dddddd; /* Light gray border for subtlety */
+    margin: 20px auto; /* Center the form on the page */
+    transition: box-shadow 0.5s ease, border-color 0.5s ease; /* Smooth hover effects */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    position: relative;
+
+}
+
+.form-container:hover {
+    box-shadow: 100px 102px 100px rgba(26, 97, 172, 0.3); /* Slightly deeper shadow on hover */
+    transform: scale(1.01);
+
+}
+
+/* Pseudo-elements for hover effect on empty space */
+.form-container::before,
+.form-container::after {
+    content: ""; /* Empty content */
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    bottom: 0;
+    width: 10vw; /* Full viewport width */
+    z-index: -1; /* Behind the container */
+    transition: background-color 5s ease; /* Smooth color transition */
+}
+
+
+
+/* Form header styles */
+.form-container h2 {
+    font-size: 32px;
+    color: #2c3e50; /* Dark blue-gray for a professional look */
+    margin-bottom: 20px;
+    font-weight: normal; /* Normal weight for a refined appearance */
+    text-transform: uppercase; /* All caps for emphasis */
+    letter-spacing: 1px; /* Spacing between letters */
+    grid-column: span 2;
+    text-align: center;
+}
+
+/* Form styles */
+form {
+    display: grid;
+    gap: 12px; /* Space between form elements */
+    text-align: left; /* Align text to the left */
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+/* Form labels */
+form label {
+    font-size: 18px; /* Font size for labels */
+    color: #555555; /* Slightly lighter gray for labels */
+    grid-column: span 10;
+}
+
+/* Form inputs, selects, and textarea */
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 6px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    grid-column: span 1;
+}
+
+/* Form fieldsets */
+form fieldset {
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 6px; /* Rounded corners */
+    padding: 10px; /* Padding inside fieldset */
+    background-color: #f9f9f9; /* Slightly gray background */
+    margin: 0; /* Remove default margin */
+    grid-column: span 5; 
+    
+}
+
+/* Form buttons */
+form button {
+    background-color: #6c757d; /* Classic gray background */
+    color: #ffffff; /* White text */
+    padding: 12px 14px; /* Padding around button */
+    border: none; /* Remove default border */
+    border-radius: 1px; /* Rounded corners */
+    font-size: 12px; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    
+}
+
+/* Hover effect for buttons */
+form button:hover {
+    background-color: #343a40; /* Darker gray on hover */
+}
+
+/* Return link */
+.return-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #6c757d; /* Classic gray text */
+    font-size: 18px; /* Font size for link */
+}
+
+.return-link:hover {
+    color: #343a40; /* Darker gray on hover */
+}
+
+/* postjobform.php */
+
+
+
+
+
+
+
+
+
+/* postjobprocess.php */
+.error-container {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text color */
+    border: 1px solid #f5c6cb; /* Light red border */
+    padding: 15px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px auto; /* Center the container */
+    max-width: 600px; /* Set max width for readability */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Font size for better readability */
+    
+}
+
+.success-container {
+    background-color: #d4edda; /* Light green background for success */
+    color: #155724; /* Dark green text color for contrast */
+    border: 1px solid #c3e6cb; /* Light green border for subtlety */
+    padding: 15px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px auto; /* Center the container */
+    max-width: 600px; /* Set max width for readability */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Font size for better readability */
+    position: relative;
+    
+}
+/* Error message title */
+.error-container h3 {
+    margin-bottom: 10px;
+    font-size: 18px; /* Slightly larger font for the title */
+    font-weight: bold;
+}
+
+/* Style for error list */
+.error-container ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.error-container li {
+    position: relative; /* Position relative to use pseudo-element */
+    padding-left: 30px; /* Space for the icon */
+    margin-bottom: 10px; /* Space between errors */
+}
+
+.error-container li::before {
+    content: '❌'; /* Cross symbol */
+    position: absolute; /* Absolute positioning */
+    left: 0; /* Align to the left */
+    color: #721c24; /* Same color as the text */
+    font-size: 18px; /* Size of the cross symbol */
+}
+
+/* Style for links */
+.error-container a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #004085; /* Dark blue color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.error-container a:hover {
+    color: #002752; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Table styling */
+.table-container {
+    width: 100%;
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse; /* Remove spacing between cells */
+    max-width: 800px; /* Set max width for the table */
+}
+
+/* Table header styles */
+.table-container th {
+    background-color: #007bff; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 12px; /* Padding for table headers */
+    text-align: left; /* Left-align text */
+    font-weight: bold; /* Bold text for headers */
+}
+
+/* Table cell styles */
+.table-container td {
+    background-color: #f9f9f9; /* Light gray background */
+    color: #333; /* Dark gray text */
+    padding: 12px; /* Padding inside cells */
+    border-bottom: 1px solid #dddddd; /* Light gray border between rows */
+}
+
+/* Alternate row colors for better readability */
+.table-container tr:nth-child(even) {
+    background-color: #f2f2f2; /* Slightly darker gray for even rows */
+}
+
+
+/* Style for the form link */
+.form-link {
+    display: block;
+
+    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+    font-size: 16px; /* Font size for better readability */
+}
+
+.form-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+/* postjobprocess.php */
+
+
+
+
 
 /* Responsive styling */
 @media (max-width: 480px) {

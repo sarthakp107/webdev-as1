@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Post Job </title>
 </head>
 <body>
+<div class="center-container">
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    
+    <div class="menu">
+        <a href="index.php">Home</a>
+        <a href="searchjobform.php">Search Job</a>
+    </div>
+</div>
+
+</div>
+    <div class="form-container">
+
+    <h2>Post Job Vacancy</h2><br>
     <form action="postjobprocess.php" method="post">
         <label for="positionid">Position ID: </label>
         <input type="text" id="positionid" name="positionid" placeholder="ID001" ><br><br>
@@ -67,8 +83,10 @@
             
             <input type="submit" name="submit" value="Submit">
     </form>
+    
 
     <br>
     <a href="index.php">Return to the home page</a>
+    </div>
 </body>
 </html>

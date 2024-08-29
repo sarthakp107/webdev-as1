@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FORM</title>
+</head>
+<body>
+<div class="center-container">
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        
+        <div class="menu">
+            <a href="index.php">Home</a>
+            <a href="postjobform.php">Post Job</a>
+            <a href="searchjobform.php">Search Job</a>
+        </div>
+    </div>
+
+ </div>  
+
+
 <?php
 //user input from form
 $positionid = isset($_POST['positionid']) ? $_POST['positionid'] : '';
@@ -17,41 +41,58 @@ $patternForCloseDate = '/^\d{2}\/\d{2}\/\d{2}$/';
 //get the length of the description
 $lengthOfDescription = strlen($description);
 
+$errors = array();
+echo "<div class='result-container'>"; 
+
 
 if (isset($_POST['submit'])) {
 
     //position id validate
     if (empty($positionid) || !preg_match($patternForPositionId, $positionid)) {
-        die("Invalid Position ID! Should Start with ID followed by three digits");
+        $errors[] = "Invalid Position ID! Should start with ID followed by three digits.";
     }
 
     //title validate
     if (empty($title) || !preg_match($patternForTitle, $title)) {
-        die("Invalid Title! It should be up to 10 alphanumeric characters, spaces, commas, periods, or exclamation points.");
+        $errors[] = "Invalid Title! It should be up to 10 alphanumeric characters, spaces, commas, periods, or exclamation points.";
     }
 
     //description validate
     if ($lengthOfDescription > 250) {
-        die("Invalid description! , 250 characters only");
+        $errors[] = "Invalid Description! Limit is 250 characters.";
     }
 
     //closeDate validate
     if (empty($closeDate) || !preg_match($patternForCloseDate, $closeDate)) {
-        die("Invalid close date. It should be in dd/mm/yy format.");
+        $errors[] = "Invalid Close Date. It should be in dd/mm/yy format.";
     }
 
     if (empty($position)) {
-        die("At least one position is required.");
+        $errors[] = "At least one position is required.";
     }
     if (empty($contract)) {
-        die("At least one contract is required.");
+        $errors[] = "At least one contract is required.";
     }
     if (empty($location)) {
-        die("At least one location is required.");
+        $errors[] = "At least one location is required.";
     }
     //accept application validation atleast one checkbox ticked
     if (empty($acceptApp)) {
-        die("At least one method to accept applications is required.");
+        $errors[] = "At least one method to accept applications is required.";
+    }
+
+     // If there are errors, display them
+     if (!empty($errors)) {
+        echo '<div class="error-container">';
+        echo '<h3>There were some errors with your submission:</h3>';
+        echo '<ul>';
+        foreach ($errors as $error) {
+            echo '<li>' . htmlspecialchars($error) . '</li>' . "<br>";
+        }
+        echo '</ul>';
+        echo '<a href="postjobform.php" class="form-link">Go back to the form</a>';
+        echo '</div>';
+        exit;
     }
 
     //if directory doesnt exists create a new one
@@ -100,15 +141,16 @@ if (isset($_POST['submit'])) {
         fclose($handle);
     
         $alldata[] = array($positionid,$title,$description,$closeDate,$position , $contract , $location , $acceptAppString);
-        echo "Form submitted";
+        echo "<div class='success-container'>Form submitted</div> <br>";
     }
     else{
-        echo "position id already exists";
+        echo "<div class='error-container'>position id already exists</div> <br>";
     }
 
-sort($alldata); 
+sort($alldata);
+
 echo "<h3>Submitted Job Vacancies:</h3>";
-echo "<table border='1'>
+echo "<table class='table-container'>
         <tr>
             <th>Position ID</th>
             <th>Title</th>
@@ -132,8 +174,10 @@ foreach ($alldata as $data) {
             <td>{$data[7]}</td>
           </tr>";
 }
-
-    echo "<a href='postjobform.php'>Form page</a><br>";
-    echo "<a href='index.php'>Home page</a><br>";
+    echo "</table>";
+    echo "</div>";
     
 }
+?>
+</body>
+</html>
