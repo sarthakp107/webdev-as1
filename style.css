@@ -1,38 +1,99 @@
-/* style.css */
+/* Reset some default browser styles */
+body, h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif; /* Elegant serif font for a classic look */
+    color: #333333; /* Dark gray for readability */
+}
+
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    color: #333;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light, neutral background for better contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-h2 {
-    color: #0056b3;
-    text-align: center;
+/* Container for content */
+.myinfo {
+    background-color: #ffffff; /* White background for a clean look */
+    padding: 40px;
+    border-radius: 12px; /* Rounded corners for a polished appearance */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+    max-width: 600px; /* Wider container for better spacing */
+    text-align: center; /* Center-align text */
+    border: 1px solid #dddddd; /* Light gray border for subtle contrast */
+    transition: box-shadow 0.5s ease, border-color 0.5s ease; /* Smooth hover effects */
 }
 
-p {
-    margin: 10px 0;
+/* Hover effect for container */
+.myinfo:hover {
+     
+    box-shadow: 100px 102px 100px rgba(26, 97, 172, 0.3); /* Slightly deeper shadow on hover */
+    transform: scale(1.01);
 }
 
-strong {
-    color: #000;
+/* Header styles */
+.myinfo h2 {
+    font-size: 32px;
+    color: #333333; /* Dark gray for strong contrast */
+    margin-bottom: 20px;
+    font-weight: bold; /* Bold for emphasis */
+    text-transform: uppercase; /* All caps for emphasis */
+    letter-spacing: 1px; /* Spacing between letters */
 }
 
-a {
-    color: #007BFF;
-    text-decoration: none;
+/* Paragraph styles */
+.myinfo p {
+    margin-bottom: 20px; /* Add spacing between paragraphs */
+    line-height: 1.8; /* Better readability */
+    color: #555555; /* Medium gray for softer text */
+    font-size: 18px; /* Larger font size for better readability */
 }
 
-a:hover {
-    text-decoration: underline;
+/* Strong emphasis */
+.myinfo strong {
+    color: #333333; /* Darker color for emphasis */
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Link styles */
+.myinfo a {
+    display: inline-block; /* Block display with spacing */
+    margin: 12px 0; /* Spacing between links */
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* White text */
+    background-color: #007bff; /* Bright blue background for visibility */
+    padding: 12px 24px; /* Padding around links */
+    border-radius: 6px; /* Rounded corners for buttons */
+    border: 1px solid #007bff; /* Matching border color */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+    font-weight: bold; /* Bold text for buttons */
+    letter-spacing: 0.5px; /* Slight spacing for buttons */
+}
+
+/* Hover effect for links */
+.myinfo a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #ffffff; /* White text on hover */
+    border-color: #0056b3; /* Darker border color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+    .myinfo {
+        padding: 20px; /* Less padding on smaller screens */
+        width: 90%; /* Full width minus margin */
+    }
+
+    .myinfo h2 {
+        font-size: 24px; /* Smaller font size on mobile */
+    }
+
+    .myinfo a {
+        padding: 10px 20px; /* Smaller padding on mobile */
+    }
 }

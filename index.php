@@ -10,7 +10,7 @@
 
 <body>
     <div class="myinfo">
-        <h2>Job Vacancy Posting System</h2>
+        <h2>Sarthaks Job Vacancy Posting System</h2>
         <p><strong>Name</strong> Sarthak Pradhan</p>
         <p><strong>Student SIMS Number:</strong> 104817068</p>
         <p><strong>Email Address:</strong> 104817068@student.swin.edu.au</p>
