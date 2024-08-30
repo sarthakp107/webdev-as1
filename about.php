@@ -35,7 +35,7 @@
         </li><br>
         <li><strong>Special Features Implemented or Attempted:</strong>
             <ul>
-                Special features
+                I tried to implement a special feature where the user could also searches for the jobs in which the deadline is already passed.
                 
             </ul>
         </li><br>

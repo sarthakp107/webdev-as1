@@ -24,6 +24,7 @@
     </div>
     <div class="searchform-container">
 
+   
     
 
     <?php
@@ -75,6 +76,7 @@
                     //set the match to be true by default
                     $isMatch = true;
 
+
                     //checks
                     // Search for the job title within the file's job titles
                     if (!empty($userInputJobTitle) && stripos($userInputJobTitle , $jobTitle) === false) { //stripos(sentence , word)  (array , word)
@@ -109,6 +111,7 @@
 
                     if ($closingDate && $closingDate < $todayDate) {
                         $isMatch = false;
+                        
                     }
 
                     //if all criteria matches add job to the result
