@@ -63,7 +63,7 @@
 
                 if ($dataSingleLine != "") {
                     $dataArray = explode(",", $dataSingleLine);
-
+                    //trim removes white space
                     $jobTitle = trim($dataArray[1]);
                     $closingDateStr = trim($dataArray[3]);
                     $position = trim($dataArray[4]);
@@ -79,7 +79,7 @@
 
                     //checks
                     // Search for the job title within the file's job titles
-                    if (!empty($userInputJobTitle) && stripos($userInputJobTitle , $jobTitle) === false) { //stripos(sentence , word)  (array , word)
+                    if (!empty($userInputJobTitle) && stripos($jobTitle , $userInputJobTitle ) === false) { //stripos(sentence , word)  (array , word)
                         $isMatch = false;
                     }
 

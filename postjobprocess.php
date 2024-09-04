@@ -41,7 +41,7 @@ $patternForCloseDate = '/^\d{2}\/\d{2}\/\d{2}$/';
 //get the length of the description
 $lengthOfDescription = strlen($description);
 
-$errors = array();
+$errors = array(); //to store errors in an array
 echo "<div class='result-container'>"; 
 
 
@@ -58,8 +58,8 @@ if (isset($_POST['submit'])) {
     }
 
     //description validate
-    if ($lengthOfDescription > 250) {
-        $errors[] = "Invalid Description! Limit is 250 characters.";
+    if (empty($description) || $lengthOfDescription > 250) {
+        $errors[] = "Invalid Description! Should not be empty and the limit is 250 characters.";
     }
 
     //closeDate validate
@@ -103,26 +103,26 @@ if (isset($_POST['submit'])) {
         mkdir($dir, 02770);
     }
 
-    $filename = "../../data/jobs/positions.txt";
+    $filename = "../../data/jobs/positions.txt"; //specified the filepath
     $alldata = array();
 
     //read the file
 
     if(file_exists($filename)){
-        $handle = fopen($filename , "r");
-        $positionIdData = array();
+        $handle = fopen($filename , "r");  //opens the file 
+        $positionIdData = array(); //declared the variable as an array
 
         while(!feof($handle)){
-            $dataSingleLine = fgets($handle);
-            if($dataSingleLine != ""){
-                $dataArray = explode("," , $dataSingleLine);
+            $dataSingleLine = fgets($handle); //reads each line
+            if($dataSingleLine != ""){ //ignores empty line
+                $dataArray = explode("," , $dataSingleLine); //seperates and makes it an array
                 $alldata[] = $dataArray;
-                $positionIdData[] = $dataArray[0];
+                $positionIdData[] = $dataArray[0]; //stores 
             }
         }
         fclose($handle);
 
-        $newData = !in_array($positionid , $positionIdData);
+        $newData = !in_array($positionid , $positionIdData); //if it matches new data is set false
 
     }
     else{

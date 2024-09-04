@@ -9,8 +9,23 @@
 </head>
 
 <body>
+<div class="left-section">
+
+
+<div class="shape"></div>
+    <div class="shape small"></div>
+    <div class="shape square"></div>
+    <div class="shape small"></div>
+    <div class="shape"></div>
+        
+    </div>
+   
+   
+        
+    
     <div class="myinfo">
-        <h2>Sarthaks Job Vacancy Posting System</h2>
+    
+        <h2>Job Vacancy Posting System</h2>
         <p><strong>Name</strong> Sarthak Pradhan</p>
         <p><strong>Student SIMS Number:</strong> 104817068</p>
         <p><strong>Email Address:</strong> 104817068@student.swin.edu.au</p>
@@ -25,6 +40,16 @@
     <p>&copy; 2024 Sarthak Pradhan . All Rights Reserved .</p>
 </footer>
     </div>
+    
+    <div class="right-section">
+        
+    <div class="shape"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape"></div>
+    </div>
+    
 </body>
 
 

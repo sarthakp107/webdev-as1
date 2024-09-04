@@ -7,7 +7,18 @@
     <title>Post Job </title>
 </head>
 <body>
+<div class="left-section">
+
+
+<div class="shape"></div>
+    <div class="shape small"></div>
+    <div class="shape square"></div>
+    <div class="shape small"></div>
+    <div class="shape"></div>
+        
+    </div>
 <div class="center-container">
+    
 
 <!-- Navigation Bar -->
 <div class="navbar">
@@ -20,7 +31,6 @@
 
 </div>
     <div class="form-container">
-
     <h2>Post Job Vacancy</h2><br>
     <form action="postjobprocess.php" method="post">
         <label for="positionid">Position ID: </label>
@@ -88,6 +98,14 @@
     <br>
     <a href="index.php">Return to the home page</a>
    
+    </div>
+    <div class="right-section">
+        
+    <div class="shape"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape"></div>
     </div>
 </body>
 </html>
