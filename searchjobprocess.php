@@ -124,7 +124,16 @@
         } else {
             die("Error: The job vacancy file does not exist.<br><a href='index.php'>Home page</a> | <a href='searchjobform.php'>Search Job Vacancy page</a>");
         }
-sort($matches); //sorted by id
+
+        usort($matches, function ($a, $b) {
+    $dateA = DateTime::createFromFormat('d/m/y', trim($a[3]));
+    $dateB = DateTime::createFromFormat('d/m/y', trim($b[3]));
+    
+    if ($dateA == $dateB) {
+        return 0;
+    }
+    return ($dateA > $dateB) ? -1 : 1; // Sort in descending order
+});
         // Display results if matches are found
         if (count($matches) > 0) {
             echo "<h3>Job Vacancy Search Results:</h3>";
