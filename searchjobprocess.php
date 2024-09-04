@@ -53,7 +53,7 @@
             die("Invalid Title! It should be up to 10 alphanumeric characters, spaces, commas, periods, or exclamation points.");
         }
 
-        $filename = "../../data/jobs/positions.txt";
+        $filename = "../../data/jobs/positions.txt"; //initialising the filepath
         $matches = array();
 
         if (file_exists($filename)) {
@@ -124,7 +124,7 @@
         } else {
             die("Error: The job vacancy file does not exist.<br><a href='index.php'>Home page</a> | <a href='searchjobform.php'>Search Job Vacancy page</a>");
         }
-
+sort($matches); //sorted by id
         // Display results if matches are found
         if (count($matches) > 0) {
             echo "<h3>Job Vacancy Search Results:</h3>";

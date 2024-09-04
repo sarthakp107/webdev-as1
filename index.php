@@ -12,6 +12,7 @@
 <div class="left-section">
 
 
+
 <div class="shape"></div>
     <div class="shape small"></div>
     <div class="shape square"></div>
@@ -24,6 +25,7 @@
         
     
     <div class="myinfo">
+    
     
         <h2>Job Vacancy Posting System</h2>
         <p><strong>Name</strong> Sarthak Pradhan</p>

@@ -15,6 +15,8 @@
     <div class="shape square"></div>
     <div class="shape small"></div>
     <div class="shape"></div>
+
+
         
     </div>
 <div class="center-container">
@@ -31,6 +33,7 @@
 
 </div>
     <div class="form-container">
+    
     <h2>Post Job Vacancy</h2><br>
     <form action="postjobprocess.php" method="post">
         <label for="positionid">Position ID: </label>
@@ -94,18 +97,21 @@
             <input type="submit" name="submit" value="Submit">
     </form>
     
+    
 
     <br>
     <a href="index.php">Return to the home page</a>
-   
+    </div>
     </div>
     <div class="right-section">
         
+    
     <div class="shape"></div>
     <div class="shape small"></div>
     <div class="shape small"></div>
     <div class="shape small"></div>
     <div class="shape"></div>
+    
     </div>
 </body>
 </html>

@@ -21,11 +21,32 @@
         </div>
 
     </div>
-    <div class="searchform-container">
-        <h2>Job Vacancy search System</h2><br>
-    
+    <div class="shape"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape"></div>
 
-    <form action="searchjobprocess.php" method="GET">
+    <div class="shape"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape small"></div>
+    <div class="shape"></div>
+
+    <!-- <div class="animated-box-container">
+            <div class="animated-box"></div>
+        </div> -->
+
+        
+        <div class="searchform-container">
+            
+            
+            <h2>Job Vacancy search System</h2><br>
+            
+            <div class="error-icon"></div>
+            
+            
+            <form action="searchjobprocess.php" method="GET">
 
         <!--job title  -->
         <label for="jobTitle">Job Title: </label>

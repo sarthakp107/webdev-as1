@@ -131,6 +131,21 @@ body {
 
 
 /* Animation Keyframes */
+
+.animated-box-container {
+    display: flex;
+    align-items: center;
+}
+
+.animated-box {
+   
+    width: 200px;
+    
+    height: 200px;
+    background-color: coral;
+    -webkit-animation: squareToCircle 2s 1s infinite alternate;
+    animation: squareToCircle 2s 1s infinite alternate;
+}
 @-webkit-keyframes squareToCircle {
     0% {
         border-radius: 0 0 0 0;
@@ -187,6 +202,135 @@ body {
         transform: rotate(180deg);
     }
 }
+
+
+.error-icon {
+    position: relative;
+    width: 500px;
+    height: 10px;
+}
+
+.error-icon::before,
+.error-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #ff4d4f;
+    top: 0%;
+    left: 0;
+    transform-origin: center;
+    animation: draw-cross 1s ease forwards;
+}
+
+.error-icon::before {
+    transform: rotate(45deg) scaleX(0);
+}
+
+.error-icon::after {
+    transform: rotate(-45deg) scaleX(0);
+}
+
+@keyframes draw-cross {
+    0% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1.2);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+
+
+.cross-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures lines do not interfere with clicking elements */
+}
+
+.cross-line::before,
+.cross-line::after {
+    content: '';
+    position: absolute;
+    width: 490px;
+    height: 150%;
+    background-color: #ff4d4f;
+    animation: draw-diagonal-line 2s ease-in-out infinite alternate;
+}
+
+.cross-line::before {
+    top: -50%;
+    left: 0;
+    transform: rotate(45deg) translateY(-100%);
+    transform-origin: top left;
+}
+
+.cross-line::after {
+    top: -50%;
+    right: 0;
+    transform: rotate(-45deg) translateY(-100%);
+    transform-origin: top right;
+}
+
+@keyframes draw-diagonal-line {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+.overlay-content {
+    position: relative;
+    z-index: 10; /* Ensures content stays above the animated lines */
+    text-align: center;
+    color: #333;
+}
+
+.overlay-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff4d4f;
+    animation: fadeInOut 4s infinite;
+}
+
+.overlay-content p {
+    font-size: 18px;
+    margin-top: 0;
+    animation: fadeInOut 4s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -335,7 +479,7 @@ body {
 /* Form styles */
 form {
     display: grid;
-    gap: 12px; /* Space between form elements */
+    gap: 5px; /* Space between form elements */
     text-align: left; /* Align text to the left */
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -349,15 +493,15 @@ form label {
 }
 
 /* Form inputs, selects, and textarea */
-form input[type="text"],
-form input[type="date"],
+form input[type="text"], 
+ form input[type="date"], 
 form textarea {
     width: 100%; /* Full width inputs */
     padding: 10px; /* Padding inside inputs */
     border: 1px solid #cccccc; /* Light gray border */
     border-radius: 6px; /* Rounded corners */
     box-sizing: border-box; /* Include padding in element's total width and height */
-    grid-column: span 1;
+    grid-column: span 1; /*1*/
 }
 
 /* Form fieldsets */
@@ -401,6 +545,8 @@ form button:hover {
 .return-link:hover {
     color: #343a40; /* Darker gray on hover */
 }
+
+
 
 /* postjobform.php */
 
@@ -539,19 +685,20 @@ form button:hover {
 
 /* searchjobform.php */
 
-
+/**/
 .searchform-container {
-    background-color: #ffffff; /* White background for the form container */
-    padding: 30px; /* Padding inside the form container */
-    border-radius: 8px; /* Rounded corners */
-    max-width: 800px; /* Max width for the container */
-    margin: 20px auto; /* Center container horizontally */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    gap: 20px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd; /* Optional: border for visual reference */
+    padding: 20px; /* Optional: padding for spacing */
+    background-color: white; /* Optional: background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for styling */
+    border-radius: 10px; /* Optional: rounded corners */
 }
+
+
 .searchform-container:hover {
     box-shadow: 100px 102px 100px rgba(26, 97, 172, 0.3); /* Slightly deeper shadow on hover */
     transform: scale(1.01);
@@ -572,14 +719,15 @@ form button:hover {
 
 .searchform-container form {
     display: grid; /* Grid layout for the form */
-    gap: 15px; /* Space between form elements */
+    gap: 10px; /* Space between form elements */
+    width: 100%;
 }
 .searchform-container h2 {
-    font-size: 24px; /* Font size for the heading */
+    font-size: 27px; /* Font size for the heading */
     text-transform: uppercase;
     color: #333333; /* Dark gray color for the heading */
     text-align: center; /* Center-align the heading */
-    margin-bottom: 20px; /* Space below the heading */
+    margin-bottom: 5px; /* Space below the heading */
 }
 
 .searchform-container form label {
@@ -628,6 +776,7 @@ form button:hover {
 .searchform-container {
     padding: 20px; /* Adjust container padding */
 }
+
 /* searchjobform.php */
 
 

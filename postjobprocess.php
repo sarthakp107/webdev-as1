@@ -24,7 +24,7 @@
 
 <?php
 //user input from form
-$positionid = isset($_POST['positionid']) ? $_POST['positionid'] : '';
+$positionid = isset($_POST['positionid']) ? $_POST['positionid'] : '';  //if the input from the form is set initializes the value to the variable else empty
 $title = isset($_POST['title']) ? $_POST['title'] : '';
 $description = isset($_POST['description']) ? $_POST['description'] : '';
 $closeDate = isset($_POST['closedate']) ? $_POST['closedate'] : '';
@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
     $dir = "../../data/jobs";
 
     if (!file_exists($dir)) {
-        mkdir($dir, 02770);
+        mkdir($dir, 02770);//if directory doesnt exists create a new one
     }
 
     $filename = "../../data/jobs/positions.txt"; //specified the filepath
@@ -130,7 +130,7 @@ if (isset($_POST['submit'])) {
     }
 
     if($newData){
-        $handle = fopen($filename , "a");
+        $handle = fopen($filename , "a"); //open the file in append mode
 
         // Join the checkbox values into a single string
         $acceptAppString = implode(' | ', $acceptApp);
