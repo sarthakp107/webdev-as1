@@ -30,7 +30,7 @@
     <?php
 
     //pattern validation for title
-    $patternForTitle = '/^[A-Za-z0-9 ,.!]{1,50}$/';
+    $patternForTitle = '/^[A-Za-z0-9 ,.!]{1,10}$/';
 
     //user inputs
     // Check if the 'jobTitle' field is set before accessing it
@@ -50,7 +50,7 @@
 
         // Validate job title
         if (!empty($userInputJobTitle) && !preg_match($patternForTitle, $userInputJobTitle)) {
-            die("Invalid Title! It should be up to 10 alphanumeric characters, spaces, commas, periods, or exclamation points.");
+            die("<div class='error-container'>Invalid Title! It should be up to 10 alphanumeric characters, spaces, commas, periods, or exclamation points.</div><br><a href='index.php'>Home page</a>  <a href='searchjobform.php'>Search Job Vacancy page</a>");
         }
 
         $filename = "../../data/jobs/positions.txt"; //initialising the filepath
@@ -62,7 +62,7 @@
                 $dataSingleLine = fgets($handle);
 
                 if ($dataSingleLine != "") {
-                    $dataArray = explode(",", $dataSingleLine);
+                    $dataArray = explode("\t", $dataSingleLine);
                     //trim removes white space
                     $jobTitle = trim($dataArray[1]);
                     $closingDateStr = trim($dataArray[3]);

@@ -90,7 +90,8 @@ if (isset($_POST['submit'])) {
             echo '<li>' . htmlspecialchars($error) . '</li>' . "<br>";
         }
         echo '</ul>';
-        echo '<a href="postjobform.php" class="form-link">Go back to the form</a>';
+        echo '<a href="postjobform.php" class="form-link">Go back to the form</a> <br>';
+        echo '<a href="index.php">Return to the home page</a>';
         echo '</div>';
         exit;
     }
@@ -115,7 +116,7 @@ if (isset($_POST['submit'])) {
         while(!feof($handle)){
             $dataSingleLine = fgets($handle); //reads each line
             if($dataSingleLine != ""){ //ignores empty line
-                $dataArray = explode("," , $dataSingleLine); //seperates and makes it an array
+                $dataArray = explode("\t" , $dataSingleLine); //seperates and makes it an array
                 $alldata[] = $dataArray;
                 $positionIdData[] = $dataArray[0]; //stores 
             }
@@ -135,13 +136,14 @@ if (isset($_POST['submit'])) {
         // Join the checkbox values into a single string
         $acceptAppString = implode(' | ', $acceptApp);
 
-        $data  = $positionid . "," . $title . "," . $description . "," . $closeDate . "," . $position. "," . $contract . "," . $location . "," . $acceptAppString . "\n"; 
+        $data  = $positionid . "\t" . $title . "\t" . $description . "\t" . $closeDate . "\t" . $position. "\t" . $contract . "\t" . $location . "\t" . $acceptAppString . "\n"; 
         fwrite($handle,$data);
     
         fclose($handle);
     
         $alldata[] = array($positionid,$title,$description,$closeDate,$position , $contract , $location , $acceptAppString);
         echo "<div class='success-container'>Form submitted</div> <br>";
+        
     }
     else{
         echo "<div class='error-container'>position id already exists</div> <br>";
@@ -174,10 +176,13 @@ foreach ($alldata as $data) {
             <td>{$data[7]}</td>
           </tr>";
 }
+echo '<a href="index.php">Return to the home page</a>';
     echo "</table>";
     echo "</div>";
     
+    
 }
 ?>
+
 </body>
 </html>
